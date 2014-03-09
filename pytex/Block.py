@@ -37,7 +37,7 @@ class Env(WrappedCode):
 	   __arglist__: the envirionment argument list
 	   __envobj__ : the object of this environment
 	"""
-	Content = TexObject.Empty
+	Content = TexObject.ContentField(TexObject.Empty)
 	Begin = '\\begin{{{__envname__}}}{__arglist__}\n'
 	End   = '\n\\end{{{__envname__}}}'
 	EnvArgs = TexObject.ContentField('')
@@ -58,6 +58,8 @@ class Math(WrappedCode):
 class Block(WrappedCode):
 	Begin = '{'
 	End = '}'
+class Center(Env):
+	EnvName = 'center'
 
 if __name__ == '__main__':
 	class testEnv(Env):
