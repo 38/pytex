@@ -1,2 +1,6 @@
 #compiled python file
 *.pyc
+*.aux
+*.log
+*.pdf
+demo/itemize.tex
