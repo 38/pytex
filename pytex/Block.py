@@ -1,6 +1,6 @@
 """Define Base Class of block object, and some simple class like math"""
 import TexObject
-
+from sys import stderr
 
 class WrappedCode(TexObject.TexObject):
 	"""Wrapped Code is some tex code that is wrapped by other code
@@ -39,7 +39,7 @@ class Env(WrappedCode):
 	"""
 	Content = TexObject.Empty
 	Begin = '\\begin{{{__envname__}}}{__arglist__}\n'
-	End   = '\n\\end{{{__envname__}}}{__arglist__}'
+	End   = '\n\\end{{{__envname__}}}'
 	EnvArgs = TexObject.ContentField('')
 	EvnName = TexObject.ContentField()
 	def __init__(self, **kwargs):

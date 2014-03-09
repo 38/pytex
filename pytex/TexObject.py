@@ -1,5 +1,6 @@
 """Some basic define of pytex system"""
 from abc import abstractmethod
+from sys import stderr
 class UndefinedContentException(Exception): pass
 class _ContentFieldRetBase(object): pass
 def ContentField(default = None):
@@ -48,6 +49,8 @@ class PlainText(TexObject):
 		TexObject.__init__(self, **kwargs)
 		self._plain_text = text
 	def format(self, **kwargs):
+		for key,value in self._kwargs.items():
+			kwargs[key] = value
 		return self._plain_text.format(**kwargs)
 
 def MakeTexObject(value, **kwargs):

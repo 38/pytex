@@ -1,0 +1,72 @@
+\documentclass[10pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amsfonts, amsthm, amssymb}
+\usepackage{tikz}
+\usepackage{pseudocode}
+\usetikzlibrary{trees}
+\usetikzlibrary{shapes.geometric}
+\usepackage[normalem]{ulem}
+\usepackage{caption}
+\usepackage{pgfplots}
+\usepackage{listings}
+\author{Hao Hou}
+\title{PyTex Demo}
+
+% these are compressed lists to help fit into a 1 page limit
+\newenvironment{enumerate*}%
+  {\vspace{-2ex} \begin{enumerate} %
+     \setlength{\itemsep}{-1ex} \setlength{\parsep}{0pt}}%
+  {\end{enumerate}}
+ 
+\newenvironment{itemize*}%
+  {\vspace{-2ex} \begin{itemize} %
+     \setlength{\itemsep}{-1ex} \setlength{\parsep}{0pt}}%
+  {\end{itemize}}
+ 
+\newenvironment{description*}%
+  {\vspace{-2ex} \begin{description} %
+     \setlength{\itemsep}{-1ex} \setlength{\parsep}{0pt}}%
+  {\end{description}}
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+
+
+\tikzset{
+itria/.style={
+  draw,dashed,shape border uses incircle,
+  isosceles triangle,shape border rotate=90,yshift=0cm},
+rtria/.style={
+  draw,dashed,shape border uses incircle,
+  isosceles triangle,isosceles triangle apex angle=90,
+  shape border rotate=-45,yshift=0.2cm,xshift=0.5cm},
+ritria/.style={
+  draw,dashed,shape border uses incircle,
+  isosceles triangle,isosceles triangle apex angle=110,
+  shape border rotate=-55,yshift=0.1cm},
+letria/.style={
+  draw,dashed,shape border uses incircle,
+  isosceles triangle,isosceles triangle apex angle=110,
+  shape border rotate=235,yshift=0.1cm}
+}
+
+\begin{document}
+
+\maketitle
+This is a test of PyTex
+Here's the Itemize
+
+\input{itemize.tex}
+\end{document}
+
